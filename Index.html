@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mochi Soundboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f7f7f7;
+        }
+        h1 {
+            text-align: center;
+        }
+        .soundboard {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            width: 300px;
+        }
+        .button {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            height: 180px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            overflow: hidden;
+        }
+        .button:hover {
+            background-color: #e0e0e0;
+        }
+        .button img {
+            width: 160px;
+            height: 160px;
+        }
+        .button .text-overlay {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            font-size: 14px;
+            color: #333;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 2px 0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <h1>Mochi Soundboard</h1>
+        <div class="soundboard">
+            <div class="button" onclick="playSound('Whats her name.wav')">
+                <img src="img.png" alt="Whats her name?">
+                <div class="text-overlay">Whats her name?</div>
+            </div>
+            <div class="button" onclick="playSound('Not whippet shes an IGY.wav')">
+                <img src="img.png" alt="Is she a wippet?">
+                <div class="text-overlay">Is she a whippet?</div>
+            </div>
+            <div class="button" onclick="playSound('Yes shes fully.wav')">
+                <img src="img.png" alt="Is she fully grown?">
+                <div class="text-overlay">Is she fully grown?</div>
+            </div>
+            <div class="button" onclick="playSound('Shes 2.wav')">
+                <img src="img.png" alt="How old is she? ">
+                <div class="text-overlay">How old is she?</div>
+            </div>
+            <div class="button" onclick="playSound('Hackney Downs.wav')">
+                <img src="img.png" alt="Where do you take her on walks? ">
+                <div class="text-overlay">Where do you take her on walks?</div>
+            </div>
+            <div class="button" onclick="playSound('Bye.wav')">
+                <img src="img.png" alt="Goodbye.">
+                <div class="text-overlay">Goodbye</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function playSound(filename) {
+            const audio = new Audio(filename);
+            audio.currentTime = 0;
+            audio.play();
+        }
+    </script>
+
+</body>
+</html>
